@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+  integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <script
+  src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+  integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous">
+  </script>
+
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  crossorigin="anonymous">
+  </script>
+
+  <script type="text/javascript" src="js/main.js"></script>
+  <script >
+
+  </script>
+
+      <title></title>
+      <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+
+    <!--NAVNBAR--->
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+
+      <button class="navbar-toggler ml-auto mb-2 bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" class="myNavbar">
+        <div class="container-fluid">
+          <div class="row">
+            <!--side bar-->
+            <div class="col-xl-2 col-lg-4 col-md-3 col-md-4 col-lg-3 col-xm-12 sidebar fixed-top">
+              <a href="#" class="navbar-brand text-white d-block
+              mx-auto text-center py-3 md-4 bottom-border">
+              Crime Si Poa</a>
+              <div class="bottom-border pd-5">
+                <img src="images/download.png" width="50" class="-circle mr-4">
+                <a href="#" class="text-white">It's about you</a>
+              </div>
+              <ul class="navbar-nav flex-column mt-5">
+                <li class="nav-item"> <a href="index.html"class="nav-link text-white p-3 mb-3 current">
+                  <i class="fa fa-home text-light fa-lg mr-4">
+                </i>Dashboard</a></li>
+
+                <li class="nav-item"> <a href="hresource.html"class="nav-link text-white p-3 mb-3">
+                  <i class="fa fa-users text-light fa-lg mr-4">
+                </i>Human resource</a></li>
+
+                <li class="nav-item"> <a href="register.html"class="nav-link text-white p-3 mb-3">
+                  <i class="fa fa-clipboard text-light fa-lg mr-4">
+                </i>Register in/out</a></li>
+
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-item"></a>
+                      </div> <a href="library.html"class="nav-link text-white p-3 mb-3">
+                  <i class="fa fa-book text-light fa-lg mr-4">
+                </i>Library</a>
+              </li>
+
+                <li class="nav-item"> <a href="programs.html"class="nav-link text-white p-3 mb-3">
+                  <i class="fa fa-tasks text-light fa-lg mr-4">
+                </i>Programs</a></li>
+              </ul>
+
+            </div>
+
+
+            <!--end side bar-->
+
+
+            <!--Top nav-->
+
+            <div class=" col-xl-10 col-lg-9 col-md-4 col-md-8 ml-auto bg-dark fixed-top py-2 top-navbar">
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  <h4 class="text-light text-uppercase mb-0">Dashboard</h4>
+
+                </div>
+
+                <div class="col-md-5">
+                  <form>
+                    <div class="input-group">
+                      <input type="text" class="form-control search-input" placeholder="Search">
+                      <button type="button" class="btn btn-danger search-button"> <i class="fa fa-search"></i>
+
+                      </button>
+                    </div>
+                  </form>
+                </div>
+
+                <div class="col-md-3">
+                  <ul class="navbar-nav">
+                    <li class="nav-item icon-parent"> <a href="#" class="nav-link icon-bullet">
+                      <i class="fa fa-comments text-muted fa-lg"></i> </a>
+                     </li>
+
+                     <li class="nav-item icon-parent"> <a href="#" class="nav-link icon-bullet">
+                       <i class="fa fa-bell text-muted fa-lg"></i> </a>
+                      </li>
+
+                      <li class="nav-item ml-auto"> <a href="#" class="nav-link"
+                        data-toggle="modal" data-target="#sign-out">
+                        <i class="fa fa-sign-out text-danger fa-lg"></i> </a>
+                       </li>
+
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+
+            <!--end Top nav-->
+
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!--END OF NAVB NAVNBAR--->
+
+<!--modal-->
+  <div class="modal" id="sign-out">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Want to leave..?</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+          <div class="modal-body">
+            Press logout to leve
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success"
+            data-dismis="Stay here" class="close" data-dismiss="modal">Stay here</button>
+
+            <button type="button" class="btn btn-danger"
+            data-dismis="Stay here" class="close" data-dismiss="modal">Logout</button>
+          </div>
+      </div>
+    </div>
+  </div>
+
+<!-- END OF modal-->
+
+ <section>
+   <div class="container-fluid">
+     <div class="row">
+       <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+         <div class="row pt-5 mt-3 mb-5">
+           <div class="col-xl-3 col-sm-6 p-2">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <i class="fa fa-books fa-3x text-warning mr-4"></i>
+                  <div class="text-right text-secondary">
+                    <h5>Staff Summary</h5>
+                    <h3>80</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer text-dark">
+                <i class="fab fa-sync mr-3"></i>
+                <span bg-dark>Update Now</span>
+              </div>
+            </div>
+           </div>
+
+           <div class="col-xl-3 col-sm-6 p-2">
+             <div class="card">
+               <div class="card-body">
+                 <div class="d-flex justify-content-between">
+                   <i class="fa fa-books fa-3x text-warning"></i>
+                   <div class="text-right text-secondary">
+                     <h5>Library Book rates</h5>
+                     <h3>3,000</h3>
+                   </div>
+                 </div>
+               </div>
+               <div class="card-footer text-dark">
+                 <i class="fab fa-sync mr-3"></i>
+                 <span bg-dark>Update Now</span>
+               </div>
+             </div>
+           </div>
+
+           <div class="col-xl-3 col-sm-6 p-2">
+             <div class="card">
+               <div class="card-body">
+                 <div class="d-flex justify-content-between">
+                   <i class="fas fa-books fa-5x text-danger"></i>
+                   <div class="text-right text-secondary">
+                     <h5>Partners</h5>
+                     <h3>7</h3>
+                   </div>
+                 </div>
+               </div>
+               <div class="card-footer text-dark">
+                 <i class="fab fa-sync mr-3"></i>
+                 <span bg-dark>Update Now</span>
+               </div>
+             </div>
+           </div>
+
+           <div class="col-xl-3 col-sm-6 p-2">
+             <div class="card">
+               <div class="card-body">
+                 <div class="d-flex justify-content-between">
+                   <i class="fa fa-program bg-dark fa-3x text-warning"></i>
+                   <div class="text-right text-secondary">
+                     <h5>Programs</h5>
+                     <h3>4</h3>
+                   </div>
+                 </div>
+               </div>
+               <div class="card-footer text-dark">
+                 <i class="fab fa-sync mr-3"></i>
+                 <span bg-dark>Update Now</span>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+
+     </div>
+   </div>
+ </section>
+<!--end of cards-->
+
+<section>
+  <div class="container-fluid">
+    <div class="row mb-5">
+      <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+        <div class="row align-items-center">
+          <div class="col-xl-6 col-12 col-md-8 mb-4">
+            <h3 class="text-light text-center">Books Summary</h3>
+            <table class="table bg-light text-center">
+              <thead>
+                <tr class="text-muted">
+                  <th>#</th>
+                  <th>Book Name</th>
+                  <th>Book Id</th>
+                  <th>Book Category</th>
+                  <th>Writer</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>1</th>
+                  <td>Four Mysteries</td>
+                  <td>id000001</td>
+                  <td>Drama</td>
+                  <td>Sherman Alexie</td>
+                </tr>
+
+                <tr>
+                  <th>1</th>
+                  <td>Four Mysteries</td>
+                  <td>id000001</td>
+                  <td>Drama</td>
+                  <td>Sherman Alexie</td>
+                </tr>
+
+                <tr>
+                  <th>1</th>
+                  <td>Four Mysteries</td>
+                  <td>id000001</td>
+                  <td>Drama</td>
+                  <td>Sherman Alexie</td>
+                </tr>
+
+                <tr>
+                  <th>1</th>
+                  <td>Four Mysteries</td>
+                  <td>id000001</td>
+                  <td>Drama</td>
+                  <td>Sherman Alexie</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!--pagination-->
+<nav>
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+      <a href="#" class="page-link py-2 px-3">
+        <span>&raquo;</span>
+      </a>
+    </li>
+    <li class="page-item">
+      <a href="#" class="page-link py-2 px-3">
+        1
+      </a>
+    </li>
+    <li class="page-item">
+      <a href="#" class="page-link py-2 px-3">
+        2
+      </a>
+    </li>
+    <li class="page-item">
+      <a href="#" class="page-link py-2 px-3">
+        3
+      </a>
+    </li>
+  </ul>
+</nav>
+
+            <!--ennd of pagination-->
+
+
+          </div>
+          <div class="col-xl-6 col-12 mb-4">
+             <h3 class="text-light text-center">Staff Summary</h3>
+             <table class="table table-dark table-hover text-center">
+               <thead>
+                 <tr class="text-light">
+                   <th>#</th>
+                   <th>Name</th>
+                   <th>Id</th>
+                   <th>Position</th>
+                   <th>Contact</th>
+                 </tr>
+                 <tbody>
+                   <tr class="text-light">
+                     <th>1</th>
+                     <td>Four Mysteries</td>
+                     <td>id000001</td>
+                     <td>Drama</td>
+                     <td> <button type="button" class="btn btn-info btn-sm">Profile</button> </td>
+                   </tr>
+                   <tr class="text-light">
+                     <th>1</th>
+                     <td>Four Mysteries</td>
+                     <td>id000001</td>
+                     <td>Drama</td>
+                     <td> <button type="button" class="btn btn-info btn-sm">Profile</button> </td>
+                   </tr>
+                   <tr class="text-light">
+                     <th>1</th>
+                     <td>Four Mysteries</td>
+                     <td>id000001</td>
+                     <td>Drama</td>
+                     <td> <button type="button" class="btn btn-info btn-sm">Profile</button> </td>
+                   </tr>
+
+                   <tr class="text-light">
+                     <th>1</th>
+                     <td>Four Mysteries</td>
+                     <td>id000001</td>
+                     <td>Drama</td>
+                     <td> <button type="button" class="btn btn-info btn-sm">Profile</button> </td>
+                   </tr>
+                 </tbody>
+               </thead>
+
+             </table>
+             <!--pagination-->
+ <nav>
+   <ul class="pagination justify-content-center">
+     <li class="page-item">
+       <a href="#" class="page-link py-2 px-3">
+         <span>&raquo;</span>
+       </a>
+     </li>
+     <li class="page-item">
+       <a href="#" class="page-link py-2 px-3">
+         1
+       </a>
+     </li>
+     <li class="page-item">
+       <a href="#" class="page-link py-2 px-3">
+         2
+       </a>
+     </li>
+     <li class="page-item">
+       <a href="#" class="page-link py-2 px-3">
+         3
+       </a>
+     </li>
+   </ul>
+ </nav>
+
+             <!--ennd of pagination-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!----------------END OF TABLE--------------------->
+
+
+
+<!--programs-->
+<section>
+  <div class="containr-fluid">
+    <div class="row">
+      <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+        <div class="row mb-4">
+          <div class="col-xl-6 col-12 mb-4 mb-xl-0">
+            <div class="bg-dark text-white p-4 rounded">
+              <h4 class="mb-5">Rates</h4>
+              <h6 class="mb-3">Borrowed Books</h6>
+              <div class="Progress mb-4" style="height:20px">
+                <div class="progress-bar progress-bar-striped font-wight-bold" style="width:91%">
+                  91%
+                </div>
+              </div>
+
+              <h6 class="mb-3">Issued books</h6>
+              <div class="Progress mb-4" style="height:20px">
+                <div class="progress-bar progress-bar-striped font-wight-bold bg-success" style="width:80%">
+                  80%
+                </div>
+              </div>
+
+              <h6 class="mb-3">Returned</h6>
+              <div class="Progress mb-4" style="height:20px">
+                <div class="progress-bar progress-bar-striped font-wight-bold bg-danger" style="width:41%">
+                  41%
+                </div>
+              </div>
+
+              <h6 class="mb-3">Lost</h6>
+              <div class="Progress mb-4" style="height:20px">
+                <div class="progress-bar progress-bar-striped font-wight-bold bg-danger" style="width:39%">
+                  39%
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="col-xl-6 col-12">
+            <h4 class="p-3 mb-3 text-light">Programs</h4>
+            <div class="container-fluid bg-white">
+              <div class="row py-3 mb-4 task-border">
+                <div class="col-1">
+                  <input type="checkbox" checked>
+                </div>
+                <div class="col-sm-9 col-8 text-dark">
+                Crime si poa
+                </div>
+                <div class="col-1 ">
+                  <a href="#" data-toggle="tooltip"
+                  tittle="edit"data-placement="top">
+                   <i class="fa fa-edit fa-lg text-success mr-2"></i> </a>
+                </div>
+
+                <div class="col-1">
+                  <a href="#" data-toggle="tooltip"
+                  tittle="delete"data-placement="top">
+                   <i class="fas fa-trash-alt fa-lg text-success mr-2"></i> </a>
+                </div>
+
+
+              </div>
+            </div>
+
+            <div class="container-fluid bg-white">
+              <div class="row py-3 mb-4 task-border">
+                <div class="col-1">
+                  <input type="checkbox" checked>
+                </div>
+                <div class="col-sm-9 col-8 text-dark">
+                Information technology
+                </div>
+                <div class="col-1 ">
+                  <a href="#" data-toggle="tooltip"
+                  tittle="edit"data-placement="top">
+                   <i class="fa fa-edit fa-lg text-success mr-2"></i> </a>
+                </div>
+
+                <div class="col-1">
+                  <a href="#" data-toggle="tooltip"
+                  tittle="delete"data-placement="top">
+                   <i class="fas fa-trash-alt fa-lg text-success mr-2"></i> </a>
+                </div>
+
+
+              </div>
+            </div>
+
+            <div class="container-fluid bg-white">
+              <div class="row py-3 mb-4 task-border">
+                <div class="col-1">
+                  <input type="checkbox" checked>
+                </div>
+                <div class="col-sm-9 col-8 text-dark">
+                Social Enterprise
+                </div>
+                <div class="col-1 ">
+                  <a href="#" data-toggle="tooltip"
+                  tittle="edit"data-placement="top">
+                   <i class="fa fa-edit fa-lg text-success mr-2"></i> </a>
+                </div>
+
+                <div class="col-1">
+                  <a href="#" data-toggle="tooltip"
+                  tittle="delete"data-placement="top">
+                   <i class="fas fa-trash-alt fa-lg text-success mr-2"></i> </a>
+                </div>
+
+
+              </div>
+            </div>
+
+            <div class="container-fluid bg-white">
+              <div class="row py-3 mb-4 task-border">
+                <div class="col-1">
+                  <input type="checkbox" checked>
+                </div>
+                <div class="col-sm-9 col-8 text-dark">
+                Phoenix
+                </div>
+                <div class="col-1 ">
+                  <a href="#" data-toggle="tooltip"
+                  tittle="edit"data-placement="top">
+                   <i class="fa fa-edit fa-lg text-success mr-2"></i> </a>
+                </div>
+
+                <div class="col-1">
+                  <a href="#" data-toggle="tooltip"
+                  tittle="delete"data-placement="top">
+                   <i class="fas fa-trash-alt fa-lg text-success mr-2"></i> </a>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!--partners-->
+
+  <section>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-xl-10 col-lg-0 col-md-8 ml-auto">
+            <div class="row">
+              <div class="col-xl-7">
+                <h4 class="text-light">Partners</h4>
+                <div class="">
+                  <div class="card">
+                    <div class="card-header">
+                      <button class="btn btn-block bg-secondary text-light text-left"
+                      data-toggle="collapse" data-target="#collapseOne">
+                        <img src="" alt=""width="50" class="mr-3 rounded">
+                        Global Fun for Children
+                      </button>
+                    </div>
+                    <div class="collapse" id="collapseOne">
+                      <div class="card-body text-dark">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                         Excepteur sint occaecat cupidatat non proident
+                        , sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header">
+                      <button class="btn btn-block bg-secondary text-light text-left"
+                      data-toggle="collapse" data-target="#collapseTwo">
+                        <img src="" alt=""width="50" class="mr-3 rounded">
+                        Digital Divide Data
+                      </button>
+                    </div>
+                    <div class="collapse" id="collapseTwo">
+                      <div class="card-body text-dark">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                         Excepteur sint occaecat cupidatat non proident
+                        , sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header">
+                      <button class="btn btn-block bg-secondary text-light text-left"
+                      data-toggle="collapse" data-target="#collapseone">
+                        <img src="" alt=""width="50" class="mr-3 rounded">
+                        Strathmore
+                      </button>
+                    </div>
+                    <div class="collapse" id="collapseone">
+                      <div class="card-body text-dark">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                         Excepteur sint occaecat cupidatat non proident
+                        , sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-5">
+
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+<!--partners end-->
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
+  </body>
+
+
+</html>

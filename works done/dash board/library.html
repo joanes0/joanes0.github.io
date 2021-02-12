@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+  integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <script
+  src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+  integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous">
+  </script>
+
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  crossorigin="anonymous">
+  </script>
+
+  <script src="js/main.js"></script>
+
+
+      <title></title>
+      <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <!--NAVNBAR--->
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+
+      <button class="navbar-toggler ml-auto mb-2 bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" class="myNavbar">
+        <div class="container-fluid">
+          <div class="row">
+            <!--side bar-->
+            <div class="col-xl-2 col-lg-4 col-md-3 col-md-4 col-lg-3 col-xm-12 sidebar fixed-top">
+              <a href="#" class="navbar-brand text-white d-block
+              mx-auto text-center py-3 md-4 bottom-border">
+              Crime Si Poa</a>
+              <div class="bottom-border pd-5">
+                <img src="images/download.png" width="50" class="-circle mr-4">
+                <a href="#" class="text-white">It's about you</a>
+              </div>
+              <ul class="navbar-nav flex-column mt-5">
+                <li class="nav-item"> <a href="index.html"class="nav-link text-white p-3 mb-3 current">
+                  <i class="fa fa-home text-light fa-lg mr-4">
+                </i>Dashboard</a></li>
+
+                <li class="nav-item"> <a href="hresource.html"class="nav-link text-white p-3 mb-3">
+                  <i class="fa fa-users text-light fa-lg mr-4">
+                </i>Human resource</a></li>
+
+                <li class="nav-item"> <a href="register.html"class="nav-link text-white p-3 mb-3">
+                  <i class="fa fa-clipboard text-light fa-lg mr-4">
+                </i>Register in/out</a></li>
+
+                <li class="nav-item"> <a href="library.html"class="nav-link text-white p-3 mb-3">
+                  <i class="fa fa-book text-light fa-lg mr-4">
+                </i>Library</a></li>
+
+                <li class="nav-item"> <a href="programs.html"class="nav-link text-white p-3 mb-3">
+                  <i class="fa fa-tasks text-light fa-lg mr-4">
+                </i>Programs</a></li>
+              </ul>
+
+            </div>
+
+
+            <!--end side bar-->
+
+
+            <!--Top nav-->
+
+            <div class=" col-xl-10 col-lg-9 col-md-4 col-md-8 ml-auto bg-dark fixed-top py-2 top-navbar">
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  <h4 class="text-light text-uppercase mb-0">Dashboard</h4>
+
+                </div>
+
+                <div class="col-md-5">
+                  <form>
+                    <div class="input-group">
+                      <input type="text" class="form-control search-input" placeholder="Search">
+                      <button type="button" class="btn btn-danger search-button"> <i class="fa fa-search"></i>
+
+                      </button>
+                    </div>
+                  </form>
+                </div>
+
+                <div class="col-md-3">
+                  <ul class="navbar-nav">
+                    <li class="nav-item icon-parent"> <a href="#" class="nav-link icon-bullet">
+                      <i class="fa fa-comments text-muted fa-lg"></i> </a>
+                     </li>
+
+                     <li class="nav-item icon-parent"> <a href="#" class="nav-link icon-bullet">
+                       <i class="fa fa-bell text-muted fa-lg"></i> </a>
+                      </li>
+
+                      <li class="nav-item ml-auto"> <a href="#" class="nav-link"
+                        data-toggle="modal" data-target="#sign-out">
+                        <i class="fa fa-sign-out text-danger fa-lg"></i> </a>
+                       </li>
+
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+
+            <!--end Top nav-->
+
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!--END OF NAVB NAVNBAR--->
+
+<!--modal-->
+  <div class="modal" id="sign-out">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Want to leave..?</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+          <div class="modal-body">
+            Press logout to leve
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success"
+            data-dismis="Stay here" class="close" data-dismiss="modal">Stay here</button>
+
+            <button type="button" class="btn btn-danger"
+            data-dismis="Stay here" class="close" data-dismiss="modal">Logout</button>
+          </div>
+      </div>
+    </div>
+  </div>
+
+<!-- END OF modal-->
+
+
+
+<section>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-9 ml-auto">
+        <div class="row pt-5 mt-3 mb-5">
+          <div class="col-sm-3 p-2">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <i class="fa fa-shopping-cart"></i>
+                  <div class="text-right text-secondary">
+                    <h5>Books</h5>
+                    <h3>30,000</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <i class="fas fa-sync mr-3"></i>
+                <span class="text-dark">Update Now</span>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-sm-3 p-2">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <i class="fa fa-shopping-cart"></i>
+                  <div class="text-right text-secondary">
+                    <h5>Borowed</h5>
+                    <h3>20</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <i class="fas fa-sync mr-3"></i>
+                <span class="text-dark ">Update Now</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3 p-2">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <i class="fa fa-shopping-cart"></i>
+                  <div class="text-right text-secondary">
+                    <h5>Returned</h5>
+                    <h3>30</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <i class="fas fa-sync mr-3"></i>
+                <span class="text-dark">Update Now</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3 p-2">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <i class="fa fa-shopping-cart"></i>
+                  <div class="text-right text-secondary">
+                    <h5>Issued</h5>
+                    <h3>500</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <i class="fas fa-sync mr-3"></i>
+                <span class="text-dark">Update Now</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--GRAPH-->
+
+
+        <div class="ecommerce-widget  my-3 col-lg-9 ml-auto">
+
+
+                                <div class="row">
+                                    <!-- ============================================================== -->
+
+                                    <!-- ============================================================== -->
+
+                                                  <!-- recent orders  -->
+                                    <!-- ============================================================== -->
+                                    <div class="col-xl-10 col-lg-9 col-md-8 ml-auto col-12">
+                                        <div class="card">
+                                            <h5 class="card-header bg-dark">Book Orders</h5>
+                                            <div class="card-body p-0">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead class="bg-light">
+                                                            <tr class="border-0">
+                                                                <th class="border-0">#</th>
+                                                                <th class="border-0">Image</th>
+                                                                <th class="border-0">Book Name</th>
+                                                                <th class="border-0">Book Id</th>
+                                                                <th class="border-0 ml-1">Order Time</th>
+                                                                <th class="border-0">Reader</th>
+                                                                <th class="border-0">Status</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>1</td>
+                                                                <td>
+                                                                    <div class="m-r-10"> <i class="fa fa-user"></i> <div>
+                                                                </td>
+                                                                <td>Product #1 </td>
+                                                                <td>id000001 </td>
+                                                                <td>27-08-2020 01:22:12</td>
+                                                                <td>Patricia J. King </td>
+                                                                <td><span class="badge-dot badge-brand mr-1"></span>InTransit </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2</td>
+                                                                <td>
+                                                                    <div class="m-r-10"> <i class="fa fa-user"></i> </div>
+                                                                </td>
+                                                                <td>Product #2 </td>
+                                                                <td>id000002 </td>
+                                                                <td>25-08-2020 21:12:56</td>
+                                                                <td>Rachel J. Wicker </td>
+                                                                <td><span class="badge-dot badge-success mr-1"></span>Delivered </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>3</td>
+                                                                <td>
+                                                                    <div class="m-r-10"> <i class="fa fa-user"></i> </div>
+                                                                </td>
+                                                                <td>Product #3 </td>
+                                                                <td>id000003 </td>
+                                                                <td>24-08-2020 14:12:77</td>
+                                                                <td>Michael K. Ledford </td>
+                                                                <td><span class="badge-dot badge-success mr-1"></span>Delivered </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>4</td>
+                                                                <td>
+                                                                    <div class="m-r-10"> <i class="fa fa-user"></i> </div>
+                                                                </td>
+                                                                <td>Product #4 </td>
+                                                                <td>id000004 </td>
+                                                                <td>23-08-2020 09:12:35</td>
+                                                                <td>Michael K. Ledford </td>
+                                                                <td><span class="badge-dot badge-success mr-1"></span>Delivered </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="9"><a href="#" class="btn btn-outline-light float-right">View Details</a></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ============================================================== -->
+                                    <!-- end recent orders  -->
+
+
+                                    <!-- ============================================================== -->
+                                    <!-- ============================================================== -->
+                                    <!-- customer acquistion  -->
+                                    <!-- ============================================================== -->
+                                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                                      <canvas id="lineChart"></canvas>
+
+
+                                    </div>
+                                    <!-- ============================================================== -->
+                                    <!-- end customer acquistion  -->
+                                    <!-- ============================================================== -->
+                                </div>
+
+                                        <!-- ============================================================== -->
+
+                                </div>
+
+
+                                </div>
+                                <div class="col-xl-10 col-lg-9 col-md-8 ml-auto row">
+
+
+                                    <div class="col-md-6 col-lg-12 col-sm-12 col-12">
+                                        <div class="card">
+                                            <h5 class="card-header bg-dark">Books Cycle</h5>
+                                            <div class="col-md-9 card-body">
+                                                <div id="morris_totalrevenue" style="position: relative; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg height="349" version="1.1" width="430" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: hidden; position: relative; left: -0.578125px;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.2.0</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs><text x="56.828125" y="318" text-anchor="end" font-family="Circular Std Book" font-size="13px" stroke="none" fill="#71748d" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: &quot;Circular Std Book&quot;; font-size: 13px; font-weight: normal;" font-weight="normal"><tspan dy="4.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">0</tspan></text><path fill="none" stroke="#e6e6f2" d="M69.328125,318.5H405" stroke-width="0.8" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="56.828125" y="244.75" text-anchor="end" font-family="Circular Std Book" font-size="13px" stroke="none" fill="#71748d" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: &quot;Circular Std Book&quot;; font-size: 13px; font-weight: normal;" font-weight="normal"><tspan dy="4.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">10,000</tspan></text><path fill="none" stroke="#e6e6f2" d="M69.328125,244.5H405" stroke-width="0.8" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="56.828125" y="171.5" text-anchor="end" font-family="Circular Std Book" font-size="13px" stroke="none" fill="#71748d" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: &quot;Circular Std Book&quot;; font-size: 13px; font-weight: normal;" font-weight="normal"><tspan dy="4.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">20,000</tspan></text><path fill="none" stroke="#e6e6f2" d="M69.328125,171.5H405" stroke-width="0.8" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="56.828125" y="98.25" text-anchor="end" font-family="Circular Std Book" font-size="13px" stroke="none" fill="#71748d" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: &quot;Circular Std Book&quot;; font-size: 13px; font-weight: normal;" font-weight="normal"><tspan dy="4.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">30,000</tspan></text><path fill="none" stroke="#e6e6f2" d="M69.328125,98.5H405" stroke-width="0.8" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="56.828125" y="25" text-anchor="end" font-family="Circular Std Book" font-size="13px" stroke="none" fill="#71748d" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: &quot;Circular Std Book&quot;; font-size: 13px; font-weight: normal;" font-weight="normal"><tspan dy="4.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">40,000</tspan></text><path fill="none" stroke="#e6e6f2" d="M69.328125,25.5H405" stroke-width="0.8" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="362.2986915543387" y="330.5" text-anchor="middle" font-family="Circular Std Book" font-size="13px" stroke="none" fill="#71748d" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: &quot;Circular Std Book&quot;; font-size: 13px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,6.5)"><tspan dy="4.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2019</tspan></text><text x="259.0802969671441" y="330.5" text-anchor="middle" font-family="Circular Std Book" font-size="13px" stroke="none" fill="#71748d" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: &quot;Circular Std Book&quot;; font-size: 13px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,6.5)"><tspan dy="4.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2018</tspan></text><text x="155.86190237994947" y="330.5" text-anchor="middle" font-family="Circular Std Book" font-size="13px" stroke="none" fill="#71748d" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: &quot;Circular Std Book&quot;; font-size: 13px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,6.5)"><tspan dy="4.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2017</tspan></text><path fill="#a3abfa" stroke="none" d="M69.328125,318C75.83229780960404,304.265625,88.84064342881213,267.6656420765027,95.34481623841617,263.0625C127.65358769481887,240.19689207650273,192.27113060762426,231.03233348540147,224.57990206402695,208.125C231.01337734309183,203.56358348540147,243.88032790122156,157.765625,250.31380318028644,153.1875C282.4811795756108,130.296875,346.81593236625946,124.90690699268738,378.9833087615838,98.25C385.48748157118786,92.86003199268738,398.49582719039597,43.3125,405,25L405,318L69.328125,318Z" fill-opacity="0.8" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 0.8;"></path><path fill="none" stroke="#5969ff" d="M69.328125,318C75.83229780960404,304.265625,88.84064342881213,267.6656420765027,95.34481623841617,263.0625C127.65358769481887,240.19689207650273,192.27113060762426,231.03233348540147,224.57990206402695,208.125C231.01337734309183,203.56358348540147,243.88032790122156,157.765625,250.31380318028644,153.1875C282.4811795756108,130.296875,346.81593236625946,124.90690699268738,378.9833087615838,98.25C385.48748157118786,92.86003199268738,398.49582719039597,43.3125,405,25" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><circle cx="69.328125" cy="318" r="4" fill="#5969ff" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="95.34481623841617" cy="263.0625" r="4" fill="#5969ff" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="224.57990206402695" cy="208.125" r="4" fill="#5969ff" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="250.31380318028644" cy="153.1875" r="4" fill="#5969ff" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="378.9833087615838" cy="98.25" r="4" fill="#5969ff" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="405" cy="25" r="4" fill="#5969ff" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle></svg><div class="morris-hover morris-default-style" style="left: 341.25px; top: 35px;"><div class="morris-hover-row-label">2018 Q6</div><div class="morris-hover-point" style="color: #5969ff">
+          Y:
+          40,000
+        </div></div></div>
+                                            </div>
+                                            <div class="card-footer">
+                                                <p class="display-7 font-weight-bold"><span class="text-primary d-inline-block">Books Cycle</span><span class="text-success float-right">+9.45%</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+  </section>
+
+<!--GRAPH-->
+  </body>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Tangerine">
+        <script type="text/javascript" src="js/main.js">
+        <script src="https://assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+        <script src="https://assets/vendor/charts/chartist-bundle/chartist.min.js"></script>
+        <script src="https://assets/vendor/charts/morris-bundle/raphael.min.js"></script>
+        <script src="https://assets/libs/js/dashboard-ecommerce.js"></script>
+
+        </script>
+
+</html>

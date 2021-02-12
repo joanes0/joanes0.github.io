@@ -1,0 +1,88 @@
+.navbar{
+	height: 70px;
+}
+
+
+.view {
+	background-image: url(../images/boom.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.back {
+	background-image: url(../images/love.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.row my-4{
+	margin-top: 10px;
+	transition: all 0.2s ease-in-out;
+
+}
+
+.Heading h2{
+	margin-left: 120px;
+	color: white;
+	margin-top: 30px;
+}
+
+.Heading h4{
+	margin-left: 120px;
+	color: white;
+}
+
+.Heading button{
+	margin-left: 120px;
+}
+
+.head h1{
+	margin-top: 80px;
+}
+
+.serviceone{
+	margin-top: 80px;
+}
+
+.servicetwo{
+	margin-top: 80px;
+}
+
+.servicethree{
+	margin-top: 80px;
+}
+
+.bout h2{
+	margin-left: 120px;
+	color: white;
+	margin-top: 30px;
+}
+
+.bout h4{
+	margin-left: 120px;
+	color: white;
+	margin-top: 80px;
+}
+
+.viewone {
+	background-image: url(../images/mobile.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.galore{
+	margin-top: 150px;
+}
+
+img:hover {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.con h1{
+	margin-top: 300px;
+	color: white;
+}

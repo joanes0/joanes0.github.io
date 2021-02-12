@@ -1,0 +1,340 @@
+.container{
+	height: 2000px;
+	background-color: #f2f2f2;
+	font-family: georgia;
+}
+.row0{
+	height: 35px;
+	background-color: #fff;
+}
+
+
+	
+}
+.head p{
+	display: inline;
+	padding-right:30px;
+	padding-top: 40px;
+	float:right;
+}
+
+
+.row1{
+	height: 100px;
+	background-color: #222222;
+	border-bottom: 5px solid #7c9c37;
+	font-size: 12pt;
+}
+.logo{
+	padding-top: 0px;
+}
+
+.nav li{
+	display: inline;
+	padding-top: 20px;
+	padding-left: 20px;
+	margin-top: 40px;
+}
+.nav a{
+	text-decoration: none;
+	color: #fff;
+	padding-top: 40px;
+}
+.nav a:hover{
+	color:  #7c9c37;
+}
+.nav ul{
+	padding-top: 30px;
+}
+.nav span{
+	color: #7c9c37;
+}
+.banner{
+	height: 380px;
+	background-color: #000;
+
+}
+
+.lorem{
+	height: 189px;
+	background-color: #fff;
+}
+.lorem p{
+	font-family: georgia;
+	font-size: 28pt;
+	text-align: center;
+	padding-top: 50px;
+}
+.row2{
+	height: 367px;
+	background-color: #fff;
+}
+.box1{
+	height: 265px;
+	background-color: #f0f0f0;
+
+}
+.box1 h4{
+	padding-top: 20px;
+}
+.box1 span{
+	color: #7c9c37;
+}
+
+
+.box2{
+	height: 265px;
+	background-color: #f0f0f0;
+	
+}
+.box2 h4{
+	padding-top: 20px;
+}
+.box2 span{
+	color: #7c9c37;
+}
+
+
+.box3{
+	height: 265px;
+	background-color: #f0f0f0;
+	
+}
+.box3 h4{
+	padding-top: 20px;
+}
+.box3 span{
+	color: #7c9c37;
+}
+
+
+.box4{
+	height: 265px;
+	background-color: #f0f0f0;
+	
+}
+.box4 h4{
+	padding-top: 20px;
+}
+.box4 span{
+	color: #7c9c37;
+}
+
+
+.black{
+	height: 100%;
+	background-color: #000;
+}
+.black1{
+	height: 100%;
+	background-color: #000;
+}
+.black2{
+	height: 100%;
+	background-color: #000;
+}
+.black3{
+	height: 100%;
+	background-color: #000;
+}
+
+.black4{
+	height: 100%;
+	background-color: #000;
+}
+
+
+
+
+.one{
+	height: 355px;
+	padding-top: 50px;
+}
+.one1{
+	height: 48px;
+	width: 48px;
+	background-color: #000;
+}
+.one2{
+	height: 48px;
+	width: 48px;
+	background-color: #000;
+}
+.one3{
+	width: 160px;
+	height: 127px;
+	margin-left: 58px;
+	margin-top: -68px;
+}
+.one h3{
+	font-size: 14pt;
+}
+.one span{
+	color:#7c9c37; 
+}
+.one h2{
+	font-size: 18pt;
+}
+.two{
+	height: 355px;
+	padding-top: 57px;
+}
+.two h3{
+	font-size: 14pt;
+}
+.two1{
+	height: 48px;
+	width: 48px;
+	background-color: #000;
+}
+.two2{
+	height: 48px;
+	width: 48px;
+	background-color: #000;
+}
+.two span{
+	color: #7c9c37;
+}
+.two3 span{
+	color: #7c9c37;
+	
+}
+.two3{
+	width: 160px;
+	height: 127px;
+	margin-left: 58px;
+	margin-top: -68px;
+}
+
+.three{
+	height: 355px;
+	padding-top: 50px;
+}
+.three span{
+	color: #7c9c37;
+}
+.three h5{
+	padding-top: 10px;
+}
+.three p{
+	padding-top: 10px;
+}
+.three h2{
+	font-size: 18pt;
+}
+
+.four{
+	height: 355px;
+	padding-top: 55px;
+}
+.four h5{
+	padding-top: 10px;
+}
+.four p{
+	padding-top: 10px;
+}
+.four span{
+	color: #7c9c37;
+}
+.four h3{
+	padding-left: 100px;
+	cursor: pointer;
+}
+
+
+
+
+.five{
+	height: 335px;
+	background-color: #666666;
+	margin-top: 160px;
+}
+.five0{
+	width: 215px;
+	height:90px;
+	background-color: #333333;
+	color: #f3f3f3;
+	border-style: solid;
+
+
+}
+.five1{
+	height: 335px;
+	background-color: #666666;
+	margin-top: 160px;
+
+}
+.five1 li{
+
+}
+.five1 li{
+	margin-top: 10px;
+	color:  #7c9c37;
+}
+.five2{
+	height: 335px;
+	background-color:  #666666;
+	margin-top: 160px;
+
+}
+.five2 span{
+	color:  #7c9c37;
+}
+.five3{
+	height: 335px;
+	background-color: #666666;
+	margin-top: 160px;
+
+}
+
+.name{
+	height: 30px;
+	width: 226px;
+	background-color: #333333;
+	margin-top: 10px;
+	border-radius: 10px;
+	color: #fff;
+}
+.name p{
+	padding-left: 10px;
+	padding-top: 5px;
+}
+.email{
+	height: 30px;
+	width: 226px;
+	background-color: #333333;
+	margin-top: 10px;
+	border-radius: 10px;
+	color: #fff;
+}
+.email p{
+	padding-left: 10px;
+	padding-top: 5px;
+}
+.submit{
+	height: 30px;
+	width: 80px;
+	background-color: #7c9c37;
+	margin-top: 10px;
+	border-radius: 10px;
+	color: #fff;
+}
+.submit p{
+	padding-left: 10px;
+	padding-top: 5px;
+}
+.foot{
+	height: 62px;
+	background-color: #000;
+}
+.foot h2{
+	font-size:12px;
+	margin-top: 20px;
+	margin-left: 10px;
+}
+.foot p{
+	font-size:12px;
+	margin-top: -20px;
+	margin-left: 10px;
+	float:right;
+}
