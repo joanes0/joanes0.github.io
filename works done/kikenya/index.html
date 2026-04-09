@@ -1,306 +1,719 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Home page</title>
-	<link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KiKenya — Culture & Heritage</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9933A;
+    --gold-light: #F0C878;
+    --gold-pale: #FDF6E8;
+    --earth: #8B4513;
+    --earth-dark: #5C2E0A;
+    --green-deep: #1B4332;
+    --green-mid: #2D6A4F;
+    --red-kenya: #BB0000;
+    --cream: #FAF6EF;
+    --text-dark: #1A1209;
+    --text-mid: #5A4A30;
+    --text-light: #9A8060;
+    --border: rgba(201,147,58,0.2);
+  }
 
-	<link rel="stylesheet" href="css/style.css">
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 5%;
+    background: rgba(250,246,239,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; font-weight: 700;
+    color: var(--earth-dark);
+    letter-spacing: -0.5px;
+  }
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; text-decoration: none;
+    color: var(--text-mid); transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+    background: var(--earth-dark);
+    padding-top: 80px;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, #5C2E0A 0%, #1B4332 50%, #BB0000 100%);
+    opacity: 0.9;
+  }
+
+  .hero-pattern {
+    position: absolute; inset: 0; opacity: 0.06;
+    background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%);
+    background-size: 20px 20px;
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    text-align: center; padding: 4rem 2rem;
+    max-width: 800px;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold-light);
+    border: 1px solid rgba(240,200,120,0.4);
+    padding: 0.4rem 1.2rem; border-radius: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 700; color: #fff;
+    line-height: 1.05; margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+  }
+  .hero h1 span { color: var(--gold-light); }
+
+  .hero-sub {
+    font-size: 1.1rem; color: rgba(255,255,255,0.7);
+    max-width: 520px; margin: 0 auto 2.5rem;
+    line-height: 1.7; font-weight: 300;
+  }
+
+  .hero-flags {
+    display: flex; align-items: center; justify-content: center; gap: 0;
+    margin-bottom: 2.5rem;
+  }
+  .flag-stripe { height: 8px; width: 60px; }
+  .flag-stripe.black { background: #000; }
+  .flag-stripe.red { background: var(--red-kenya); }
+  .flag-stripe.green { background: var(--green-deep); }
+  .flag-stripe.white { background: #fff; width: 8px; height: 30px; }
+
+  .btn-primary {
+    display: inline-block; padding: 0.9rem 2.5rem;
+    background: var(--gold); color: var(--earth-dark);
+    font-weight: 500; font-size: 0.9rem; letter-spacing: 0.05em;
+    text-decoration: none; border-radius: 3px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  .hero-stats {
+    display: flex; gap: 3rem; justify-content: center;
+    margin-top: 4rem; padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem; color: var(--gold-light); font-weight: 700;
+  }
+  .hero-stat .lbl {
+    font-size: 0.75rem; color: rgba(255,255,255,0.5);
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+
+  /* SECTION SHARED */
+  section { padding: 6rem 5%; }
+
+  .section-tag {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 0.8rem; display: block;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--text-dark); line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .section-sub {
+    font-size: 1rem; color: var(--text-mid); line-height: 1.7;
+    max-width: 560px;
+  }
+
+  /* ABOUT */
+  .about {
+    background: #fff;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+    align-items: center;
+  }
+
+  .about-visual {
+    position: relative;
+  }
+
+  .about-img-frame {
+    width: 100%; aspect-ratio: 4/5;
+    background: linear-gradient(135deg, var(--green-deep), var(--earth));
+    border-radius: 4px; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .about-img-inner {
+    font-size: 6rem; opacity: 0.3;
+  }
+
+  .about-accent {
+    position: absolute; bottom: -1.5rem; right: -1.5rem;
+    width: 160px; height: 160px;
+    border: 3px solid var(--gold);
+    border-radius: 4px; z-index: -1;
+  }
+
+  .about-quote {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-left: 3px solid var(--gold);
+    background: var(--gold-pale);
+    border-radius: 0 4px 4px 0;
+  }
+  .about-quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; font-style: italic;
+    color: var(--earth-dark); line-height: 1.6;
+  }
+
+  /* TRIBES GRID */
+  .tribes { background: var(--cream); }
+
+  .tribes-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 3rem;
+    flex-wrap: wrap; gap: 1rem;
+  }
+
+  .filter-tabs {
+    display: flex; gap: 0.5rem; flex-wrap: wrap;
+  }
+
+  .filter-tab {
+    padding: 0.45rem 1.2rem;
+    border: 1px solid var(--border);
+    background: transparent; color: var(--text-mid);
+    font-size: 0.8rem; font-weight: 500; letter-spacing: 0.05em;
+    cursor: pointer; border-radius: 2rem;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
+  }
+  .filter-tab:hover, .filter-tab.active {
+    background: var(--gold); border-color: var(--gold);
+    color: var(--earth-dark);
+  }
+
+  .tribes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .tribe-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 6px; overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+    cursor: pointer;
+  }
+  .tribe-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(139,69,19,0.12);
+  }
+
+  .tribe-card-header {
+    height: 140px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+
+  .tribe-card-body {
+    padding: 1.2rem 1.4rem 1.4rem;
+  }
+
+  .tribe-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; font-weight: 600;
+    color: var(--text-dark); margin-bottom: 0.3rem;
+  }
+
+  .tribe-lang {
+    font-size: 0.78rem; color: var(--gold);
+    font-weight: 500; letter-spacing: 0.05em;
+    margin-bottom: 0.7rem;
+  }
+
+  .tribe-desc {
+    font-size: 0.88rem; color: var(--text-mid);
+    line-height: 1.6;
+  }
+
+  .tribe-region {
+    display: inline-block; margin-top: 1rem;
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-radius: 2rem;
+    background: var(--gold-pale);
+    color: var(--earth);
+  }
+
+  /* GALLERY */
+  .gallery { background: var(--earth-dark); }
+  .gallery .section-title { color: #fff; }
+  .gallery .section-tag { color: var(--gold-light); }
+  .gallery .section-sub { color: rgba(255,255,255,0.6); }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 220px);
+    gap: 1rem; margin-top: 3rem;
+  }
+
+  .gallery-item {
+    border-radius: 4px; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3rem; position: relative;
+  }
+  .gallery-item:first-child {
+    grid-row: 1 / 3;
+  }
+
+  .gallery-label {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 0.8rem 1rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: #fff; font-size: 0.82rem; font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  /* CONTACT */
+  .contact {
+    background: #fff;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+    align-items: start;
+  }
+
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-group label {
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--text-mid);
+  }
+  .form-group input, .form-group textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 3px; font-family: 'DM Sans', sans-serif;
+    font-size: 0.92rem; background: var(--cream);
+    color: var(--text-dark); outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus, .form-group textarea:focus {
+    border-color: var(--gold);
+  }
+  .form-group textarea { resize: vertical; min-height: 120px; }
+
+  /* FOOTER */
+  footer {
+    background: var(--text-dark);
+    padding: 3rem 5%;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1.5rem;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; color: #fff; font-weight: 700;
+  }
+  .footer-logo span { color: var(--gold); }
+
+  .footer-text {
+    font-size: 0.82rem; color: rgba(255,255,255,0.4);
+  }
+
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a {
+    font-size: 0.8rem; color: rgba(255,255,255,0.5);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .about, .contact { grid-template-columns: 1fr; gap: 2.5rem; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .gallery-item:first-child { grid-row: auto; }
+    .nav-links { display: none; }
+    .hero-stats { gap: 1.5rem; }
+    section { padding: 4rem 5%; }
+    .tribes-header { flex-direction: column; align-items: flex-start; }
+  }
+
+  /* TRIBE CARD COLORS */
+  .tc-0 { background: linear-gradient(135deg, #1B4332, #2D6A4F); }
+  .tc-1 { background: linear-gradient(135deg, #5C2E0A, #8B4513); }
+  .tc-2 { background: linear-gradient(135deg, #BB0000, #8B0000); }
+  .tc-3 { background: linear-gradient(135deg, #C9933A, #8B6914); }
+  .tc-4 { background: linear-gradient(135deg, #1A1A5E, #2E2E9E); }
+  .tc-5 { background: linear-gradient(135deg, #2C5F2E, #4A8C4C); }
+  .tc-6 { background: linear-gradient(135deg, #6B2737, #9C3B50); }
+  .tc-7 { background: linear-gradient(135deg, #3D2B1F, #6B4C3B); }
+
+  .tc-emoji { font-size: 3rem; opacity: 0.6; }
+
+  /* HIDDEN TRIBE CARDS */
+  .tribe-card.hidden { display: none; }
+
+  /* MODAL */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 200;
+    background: rgba(0,0,0,0.7); align-items: center; justify-content: center;
+    padding: 1rem;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: #fff; border-radius: 8px;
+    max-width: 560px; width: 100%; max-height: 85vh; overflow-y: auto;
+    padding: 2.5rem;
+    position: relative;
+  }
+  .modal-close {
+    position: absolute; top: 1rem; right: 1rem;
+    background: none; border: none; font-size: 1.5rem;
+    cursor: pointer; color: var(--text-mid);
+  }
+  .modal-tribe-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; color: var(--text-dark); margin-bottom: 0.3rem;
+  }
+  .modal-lang { color: var(--gold); font-size: 0.9rem; font-weight: 500; margin-bottom: 1.2rem; }
+  .modal-body { font-size: 0.95rem; color: var(--text-mid); line-height: 1.75; }
+  .modal-body p { margin-bottom: 1rem; }
+  .modal-detail { margin-top: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .modal-detail-item { background: var(--gold-pale); padding: 1rem; border-radius: 4px; }
+  .modal-detail-item .lbl { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--earth); margin-bottom: 0.3rem; }
+  .modal-detail-item .val { font-size: 0.92rem; font-weight: 500; color: var(--text-dark); }
+</style>
 </head>
 <body>
 
-<!--navigation bar-->
-<div class="container">
-	
-
-
-<nav class="navbar navbar-expand-lg navbar-light bg-gradient">
-  <a class="navbar-brand" href="index.html"><img src="images/logo.png" width="70" height="70" class="d-inline-block align-top"></a>
-  		<!--button-->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-       <ul class="navbar-nav mr-auto">
-
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="about us.html">ABOUT US</a>
-      </li>
-
-    
-
-       <li class="nav-item">
-        <a class="nav-link" href="gallery.html">GALLERY</a>
-      </li>
-
-       <li class="nav-item">
-        <a class="nav-link" href="contacts.html">CONTACT US</a>
-      </li>
-
-    </ul>
-
-    <form class="form-inline my-2 my-lg-0">
-
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-
-  </div>
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Ki<span>Kenya</span></div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#tribes">Tribes</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
-<!--carosel-->
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-tag">✦ Kenya's Living Heritage</div>
+    <h1>Our Culture,<br><span>Our Pride</span></h1>
+    <p class="hero-sub">Exploring the rich tapestry of Kenya's 42+ ethnic communities — their languages, traditions, and stories that have shaped a nation.</p>
+    <a href="#tribes" class="btn-primary">Explore the Tribes</a>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="num">42+</div>
+        <div class="lbl">Ethnic Groups</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">60+</div>
+        <div class="lbl">Languages</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">55M+</div>
+        <div class="lbl">People</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div id="slides" class="carousel slide" data-ride="carousel">
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-visual">
+    <div class="about-img-frame">
+      <div class="about-img-inner">🗺️</div>
+    </div>
+    <div class="about-accent"></div>
+  </div>
+  <div>
+    <span class="section-tag">About KiKenya</span>
+    <h2 class="section-title">A Nation of Many Voices</h2>
+    <p class="section-sub">As Kenya's ethnic makeup continues to evolve in the wake of modernization, KiKenya asks: how many communities still hold fast to their culture, dialects and identity in the face of modernity?</p>
+    <div class="about-quote" style="margin-top:2rem;">
+      <p>"Harambee — pulling together. Kenya's greatest strength lies in the beautiful mosaic of its peoples."</p>
+    </div>
+    <p style="margin-top:1.5rem; font-size:0.92rem; color:var(--text-mid); line-height:1.7;">
+      We celebrate the Bantu, Nilotic, and Cushitic peoples of Kenya — their art, language, clothing, food, music and way of life. This platform exists to document, preserve and share these stories for future generations.
+    </p>
+  </div>
+</section>
 
-		<ul class="carousel-indicators">
+<!-- TRIBES -->
+<section class="tribes" id="tribes">
+  <div class="tribes-header">
+    <div>
+      <span class="section-tag">The Communities</span>
+      <h2 class="section-title">Kenya's 42 Tribes</h2>
+    </div>
+    <div class="filter-tabs">
+      <button class="filter-tab active" onclick="filterTribes('all', this)">All</button>
+      <button class="filter-tab" onclick="filterTribes('Bantu', this)">Bantu</button>
+      <button class="filter-tab" onclick="filterTribes('Nilotic', this)">Nilotic</button>
+      <button class="filter-tab" onclick="filterTribes('Cushitic', this)">Cushitic</button>
+    </div>
+  </div>
+  <div class="tribes-grid" id="tribesGrid"></div>
+</section>
 
-				<li data-target="#slides" data-slide-to="0" class="active"></li>
-				<li data-target="#slides" data-slide-to="1"></li>
-				<li data-target="#slides" data-slide-to="2"></li>
-				<li data-target="#slides" data-slide-to="3"></li>
-				<li data-target="#slides" data-slide-to="4"></li>
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <span class="section-tag">Visual Heritage</span>
+  <h2 class="section-title">Faces of Kenya</h2>
+  <p class="section-sub">A glimpse into the colours, textures, and traditions that make Kenya's cultural heritage extraordinary.</p>
+  <div class="gallery-grid">
+    <div class="gallery-item tc-1" style="border-radius:4px;">
+      <span style="font-size:5rem;opacity:0.5;">👁️</span>
+      <div class="gallery-label">Maasai Warrior Regalia</div>
+    </div>
+    <div class="gallery-item tc-0">
+      <span style="font-size:3rem;opacity:0.5;">🌿</span>
+      <div class="gallery-label">Kikuyu Traditional Dress</div>
+    </div>
+    <div class="gallery-item tc-3">
+      <span style="font-size:3rem;opacity:0.5;">🪘</span>
+      <div class="gallery-label">Luo Cultural Ceremonies</div>
+    </div>
+    <div class="gallery-item tc-2">
+      <span style="font-size:3rem;opacity:0.5;">🏺</span>
+      <div class="gallery-label">Swahili Coastal Artistry</div>
+    </div>
+    <div class="gallery-item tc-5">
+      <span style="font-size:3rem;opacity:0.5;">🧵</span>
+      <div class="gallery-label">Kamba Basket Weaving</div>
+    </div>
+  </div>
+</section>
 
-		</ul>
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div>
+    <span class="section-tag">Get In Touch</span>
+    <h2 class="section-title">Share Your Story</h2>
+    <p class="section-sub">Do you have a cultural story, photograph, or knowledge about a Kenyan community to share? We'd love to hear from you.</p>
+    <div style="margin-top:2.5rem; display:flex; flex-direction:column; gap:1.2rem;">
+      <div style="display:flex; align-items:center; gap:1rem;">
+        <div style="width:40px;height:40px;background:var(--gold-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">📧</div>
+        <div>
+          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);">Email</div>
+          <div style="font-size:0.92rem;color:var(--text-dark);">hello@kikenya.co.ke</div>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; gap:1rem;">
+        <div style="width:40px;height:40px;background:var(--gold-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">📍</div>
+        <div>
+          <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-light);">Location</div>
+          <div style="font-size:0.92rem;color:var(--text-dark);">Nairobi, Kenya</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="contact-form">
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" placeholder="e.g. Wanjiru Kamau">
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label>Your Community / Tribe</label>
+        <input type="text" placeholder="e.g. Kikuyu, Luo, Maasai...">
+      </div>
+      <div class="form-group">
+        <label>Your Message</label>
+        <textarea placeholder="Share your story, knowledge or inquiry..."></textarea>
+      </div>
+      <button class="btn-primary" style="align-self:flex-start; border:none; cursor:pointer;">Send Message</button>
+    </div>
+  </div>
+</section>
 
-		<div class="carousel-inner">
-			<div class="carousel-item active">
-				<img src="images/bip.jpg"width="1350">
-				<div class="carousel-caption">
-					<h1 class="display-2">KIKENYA</h1>
-					<h3>Visit Our website</h3>
-					<button type="button" class="btn btn-outline-light btn-lg">HOME PAGE</button>
-					
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Ki<span>Kenya</span></div>
+  <div class="footer-text">© 2025 KiKenya — Our Culture, Our Pride</div>
+  <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#tribes">Tribes</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
 
-				</div>
-			</div>
-			
-			<div class="carousel-item">
-				<img src="images/kikuyu.jpg" width="100%">
-			</div>
+<!-- TRIBE MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModalBtn()">✕</button>
+    <div class="modal-tribe-name" id="modalName"></div>
+    <div class="modal-lang" id="modalLang"></div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-detail" id="modalDetail"></div>
+  </div>
+</div>
 
-			<div class="carousel-item">
-				<img src="images/maasai.jpg" width="100%">
-			</div>
+<script>
+const tribes = [
+  // BANTU
+  { name: "Kikuyu", lang: "Gĩkũyũ", group: "Bantu", region: "Central Kenya", pop: "~8.1M", desc: "The largest ethnic group in Kenya, the Kikuyu are Bantu-speaking people who settled around Mount Kenya. Known for their agriculture, entrepreneurship and rich oral traditions, they played a central role in Kenya's independence movement.", emoji: "🏔️", color: "tc-0" },
+  { name: "Luhya", lang: "Luhya", group: "Bantu", region: "Western Kenya", pop: "~6.8M", desc: "The second largest community in Kenya, the Luhya are actually a confederation of 18 sub-groups. They are known for their vibrant bullfighting traditions, the Isukuti dance, and skilled craftsmanship in iron-smelting and pottery.", emoji: "🐂", color: "tc-5" },
+  { name: "Kamba", lang: "Kikamba", group: "Bantu", region: "Eastern Kenya", pop: "~4.7M", desc: "The Kamba are renowned across East Africa for their extraordinary skill in wood carving, basket weaving, and ivory work. They were historically great traders and warriors, and their music — featuring the famous Ngoma drums — is iconic.", emoji: "🪵", color: "tc-1" },
+  { name: "Gusii (Kisii)", lang: "Ekegusii", group: "Bantu", region: "Nyanza", pop: "~2.9M", desc: "Living in the fertile highlands near Lake Victoria, the Kisii are known for their soapstone carving — a globally recognized art form. They are industrious farmers and have a rich tradition of oral poetry and folk songs.", emoji: "🪨", color: "tc-7" },
+  { name: "Meru", lang: "Kimeru", group: "Bantu", region: "Mount Kenya Region", pop: "~1.9M", desc: "The Meru are closely related to the Kikuyu and inhabit the slopes of Mount Kenya. They are known for their Njuri Ncheke council of elders, their expertise in agriculture, and cultivation of Miraa (Khat).", emoji: "🌱", color: "tc-5" },
+  { name: "Mijikenda", lang: "Mijikenda dialects", group: "Bantu", region: "Coastal Kenya", pop: "~1.9M", desc: "The Mijikenda (Nine Homesteads) are a group of nine closely related Bantu communities living along the Kenyan coast. They are known for the sacred Kaya forests — UNESCO World Heritage Sites — which served as ritual and defensive centres.", emoji: "🌴", color: "tc-0" },
+  { name: "Swahili (Waswahili)", lang: "Kiswahili", group: "Bantu", region: "Coastal Kenya", pop: "~1M", desc: "A culturally distinct Bantu community with deep Arab, Persian and Indian influences, the Swahili people gave Kenya and East Africa its lingua franca — Kiswahili. Their art, architecture, food and music reflect centuries of Indian Ocean trade.", emoji: "⛵", color: "tc-3" },
+  { name: "Taita", lang: "Kidawida / Kisagala", group: "Bantu", region: "Taita-Taveta", pop: "~350K", desc: "The Taita people inhabit the Taita Hills in southeastern Kenya. They are known for their unique skull burial traditions, vibrant festivals, and their role as the custodians of the Tsavo ecosystem and conservation.", emoji: "🏕️", color: "tc-2" },
+  { name: "Embu", lang: "Kiembu", group: "Bantu", region: "Mount Kenya Region", pop: "~550K", desc: "Closely related to the Kikuyu and Meru, the Embu people live on the southeastern slopes of Mount Kenya. They are primarily farmers and pastoralists, known for their rich cultural dances and elaborate initiation ceremonies.", emoji: "🌄", color: "tc-0" },
+  { name: "Tharaka", lang: "Kitharaka", group: "Bantu", region: "Tharaka-Nithi", pop: "~200K", desc: "A small but distinct Bantu community closely related to the Meru, the Tharaka people inhabit the lowlands of Tharaka-Nithi County. They are known for their beekeeping traditions and honey-based culture.", emoji: "🍯", color: "tc-3" },
+  { name: "Kuria", lang: "Kikuria", group: "Bantu", region: "Migori", pop: "~250K", desc: "Straddling the Kenya-Tanzania border, the Kuria are known for their rich musical heritage — the Obokano (a large lyre), their famous cattle-keeping traditions, and their elaborate age-grade ceremonies.", emoji: "🎶", color: "tc-5" },
+  { name: "Pokomo", lang: "Kipokomo", group: "Bantu", region: "Tana River", pop: "~120K", desc: "The Pokomo live along the Tana River and are skilled farmers, cultivating rice and bananas on the riverbanks. They coexist with the pastoralist Orma, a relationship that has historically had both tensions and cooperation.", emoji: "🌾", color: "tc-0" },
 
-			<div class="carousel-item">
-				<img src="images/woman.jpg" width="100%">
-			</div>
+  // NILOTIC
+  { name: "Luo", lang: "Dholuo", group: "Nilotic", region: "Nyanza", pop: "~5.1M", desc: "The third largest community in Kenya, the Luo are a Nilotic people with roots in Sudan. They are known for their fishing traditions on Lake Victoria, vibrant benga music, rich oral history, and a deep culture of respect for elders and communal living.", emoji: "🎣", color: "tc-4" },
+  { name: "Kalenjin", lang: "Kalenjin dialects", group: "Nilotic", region: "Rift Valley", pop: "~6.4M", desc: "A group of over ten related Nilotic communities (including Nandi, Kipsigis, Tugen, Keiyo, Marakwet, Pokot, Sabaot, Terik and Elgeyo), the Kalenjin are globally renowned for producing extraordinary long-distance runners who have dominated international athletics.", emoji: "🏃", color: "tc-4" },
+  { name: "Maasai", lang: "Maa", group: "Nilotic", region: "Rift Valley / Kajiado", pop: "~900K", desc: "One of the most recognised cultures in the world, the Maasai are semi-nomadic pastoralists who have fiercely preserved their culture. Known for their distinctive red shukas, beadwork, jumping dances (adumu), and lion-hunting traditions, they are the cultural face of Kenya internationally.", emoji: "🦁", color: "tc-2" },
+  { name: "Turkana", lang: "Turkana", group: "Nilotic", region: "Northwestern Kenya", pop: "~1.2M", desc: "Inhabiting the arid northwestern shores of Lake Turkana, the Turkana are resilient nomadic pastoralists. Their territory has yielded some of the world's oldest human fossils, and they are known for their elaborate ornamental culture, especially their beaded jewellery.", emoji: "🏜️", color: "tc-7" },
+  { name: "Samburu", lang: "Samburu (Maa dialect)", group: "Nilotic", region: "Samburu County", pop: "~250K", desc: "Closely related to the Maasai, the Samburu are nomadic pastoralists of northern Kenya. They are known for their warrior culture (Moran), elaborate beaded jewellery, and their intimate knowledge of the bush and wildlife.", emoji: "🦒", color: "tc-3" },
+  { name: "Teso (Iteso)", lang: "Ateso", group: "Nilotic", region: "Western Kenya", pop: "~300K", desc: "A Nilotic community found in western Kenya and eastern Uganda, the Teso are primarily farmers and pastoralists. They are known for their unique music, especially the endingidi (tube fiddle), and elaborate funeral and marriage ceremonies.", emoji: "🎻", color: "tc-4" },
+  { name: "Acholi", lang: "Acholi (Luo dialect)", group: "Nilotic", region: "Western Kenya / Uganda border", pop: "~100K", desc: "A Luo-related community found mainly in Uganda with a presence in western Kenya, the Acholi are known for their Larakaraka dance tradition, their oral epic poetry, and historically their warrior ethos.", emoji: "🥁", color: "tc-4" },
+  { name: "Ilchamus (Njemps)", lang: "Ilchamus", group: "Nilotic", region: "Baringo", pop: "~50K", desc: "Living around Lake Baringo, the Ilchamus (also called Njemps) are unique among Nilotic peoples for combining pastoralism with irrigation-based agriculture on the lake shores. They share close cultural ties with the Samburu and Maasai.", emoji: "💧", color: "tc-4" },
+  { name: "Nubians", lang: "Nubi / Arabic", group: "Nilotic", region: "Kibera, Nairobi", pop: "~50K", desc: "Descendants of Sudanese soldiers brought to Kenya during British colonial rule, the Nubians have developed a unique Kenyan identity. They established Kibera in Nairobi, and are known for their distinctive Nubi language and vibrant music and dance traditions.", emoji: "🕌", color: "tc-7" },
 
-			<div class="carousel-item">
-				<img src="images/african.jpg" width="100%">
-			</div>
+  // CUSHITIC
+  { name: "Somali (Kenyan)", lang: "Somali", group: "Cushitic", region: "Northeastern Kenya", pop: "~2.5M", desc: "Kenyan Somalis are part of the larger Somali Nation straddling the Horn of Africa. They are predominantly nomadic pastoralists and traders, known for their rich oral poetry (Gabay), colourful cloth, henna traditions and deeply rooted Islamic heritage.", emoji: "🐪", color: "tc-3" },
+  { name: "Borana", lang: "Borana (Oromo dialect)", group: "Cushitic", region: "Marsabit / Moyale", pop: "~150K", desc: "The Borana are Cushitic pastoralists who live in the Chalbi desert of northern Kenya. They are known for their democratic Gadaa governance system, their deep knowledge of desert ecology, and the beautiful Dabballe and Gada ceremonies.", emoji: "🌵", color: "tc-3" },
+  { name: "Rendille", lang: "Rendille", group: "Cushitic", region: "Marsabit", pop: "~60K", desc: "One of Kenya's most isolated communities, the Rendille are camel herders in the harsh terrain of Marsabit. Their culture is deeply connected to their camels — in language, ritual, and survival. Their beadwork and doum palm crafts are outstanding.", emoji: "🐫", color: "tc-7" },
+  { name: "Orma", lang: "Orma (Oromo dialect)", group: "Cushitic", region: "Tana River", pop: "~60K", desc: "The Orma are Cushitic-speaking cattle herders living along the Tana River delta. They share territory with the Bantu Pokomo farmers, and are known for their elaborate cattle-wealth culture and seasonal movement patterns.", emoji: "🐄", color: "tc-2" },
+  { name: "Sakuye", lang: "Sakuye (Oromo dialect)", group: "Cushitic", region: "Isiolo / Marsabit", pop: "~20K", desc: "A small semi-nomadic community in Isiolo and Marsabit, the Sakuye were originally part of the Garre and Rendille peoples. They are camel herders and are known for their intricate beadwork and unique wedding ceremonies.", emoji: "💎", color: "tc-7" },
+  { name: "Gabra", lang: "Gabra (Oromo dialect)", group: "Cushitic", region: "Marsabit / Turkana border", pop: "~60K", desc: "The Gabra are nomadic pastoralists who occupy the semi-arid lands between Marsabit and the Ethiopian border. Their Yaa Galbo (clan system) governs social organisation, and their austere desert lifestyle has given them remarkable resilience.", emoji: "🏕️", color: "tc-3" },
+  { name: "Burji", lang: "Burji", group: "Cushitic", region: "Marsabit", pop: "~30K", desc: "The Burji are Cushitic-speaking people originally from southern Ethiopia, settled in Kenya's Marsabit region. They are known as skilled traders and market gardeners in the arid north — growing vegetables at altitude in Marsabit's cool highlands.", emoji: "🥬", color: "tc-5" },
+  { name: "Digo", lang: "Kidigo", group: "Bantu", region: "Kwale (Coast)", pop: "~400K", desc: "Part of the Mijikenda cluster, the Digo inhabit the southern coast near Kwale and Mombasa. They are known for their coastal culture, dhow-building traditions, and the sacred Kaya Kinondo forest, one of Kenya's most important spiritual sites.", emoji: "🌊", color: "tc-0" },
+  { name: "Bajuni", lang: "Kibajuni", group: "Bantu", region: "Lamu Archipelago", pop: "~25K", desc: "The Bajuni are Swahili fishermen and sailors who inhabit the Lamu Archipelago and the islands along the Somali coast. Their culture reflects centuries of Indian Ocean trade, and they are master boat builders and fishermen.", emoji: "🚢", color: "tc-4" },
+  { name: "El Molo", lang: "El Molo", group: "Cushitic", region: "Lake Turkana", pop: "~4K", desc: "One of the world's smallest ethnic groups, the El Molo are fishermen living on the southern shores of Lake Turkana. Their entire subsistence depends on the lake — fish, hippo and crocodile. Their language is critically endangered.", emoji: "🐊", color: "tc-2" },
+  { name: "Ogiek (Dorobo)", lang: "Ogiek", group: "Nilotic", region: "Mau Forest / Mount Kenya", pop: "~30K", desc: "The Ogiek are Kenya's oldest hunter-gatherer community, the original forest peoples of the Mau and Mount Kenya forests. They have deep knowledge of medicinal plants, honey harvesting, and forest ecology — but face threats to their ancestral lands.", emoji: "🍀", color: "tc-5" },
+  { name: "Yaaku (Mukogodo)", lang: "Yaaku", group: "Cushitic", region: "Laikipia", pop: "~4K", desc: "Once hunter-gatherers in the Mukogodo forest of Laikipia, the Yaaku are a Cushitic community whose language is nearly extinct. They shifted to pastoralism under pressure from neighbouring Maasai groups, adopting Maa language.", emoji: "🌲", color: "tc-5" },
+  { name: "Suba", lang: "Suba", group: "Bantu", region: "Lake Victoria Islands", pop: "~120K", desc: "The Suba inhabit the islands of Lake Victoria near Homa Bay. Historically fishermen, they are now largely Luo-speaking but maintain distinct cultural practices. Their Rusinga Island is famous as the birthplace of Tom Mboya.", emoji: "🏝️", color: "tc-4" },
+  { name: "Pokot", lang: "Pokoot", group: "Nilotic", region: "West Pokot / Baringo", pop: "~700K", desc: "Part of the broader Kalenjin group, the Pokot are agro-pastoralists and warriors of northwestern Kenya. They are known for their elaborate lip plates, neck rings, and colourful bead ornaments, as well as their fierce reputation in cattle raiding.", emoji: "⚔️", color: "tc-2" },
+  { name: "Nandi", lang: "Nandi (Kalenjin)", group: "Nilotic", region: "Nandi Hills", pop: "~900K", desc: "Among the most celebrated of the Kalenjin sub-groups, the Nandi are the home community of many of Kenya's greatest runners. They fiercely resisted British colonial rule under the legendary Orkoiyot Koitalel arap Samoei.", emoji: "🏆", color: "tc-4" },
+  { name: "Kipsigis", lang: "Kipsigis (Kalenjin)", group: "Nilotic", region: "Kericho / Bomet", pop: "~1.5M", desc: "The largest sub-group of the Kalenjin, the Kipsigis inhabit the highland tea-growing regions of Kericho and Bomet. They are known for their Tum dance, their circumcision rites, and their historical expansion of territory.", emoji: "🍵", color: "tc-5" },
+  { name: "Marakwet", lang: "Marakwet (Kalenjin)", group: "Nilotic", region: "Elgeyo-Marakwet", pop: "~250K", desc: "Living on the Elgeyo Escarpment of the Rift Valley, the Marakwet are famous for their ancient irrigation furrow system (called Marakwet Furrows), a sophisticated engineering feat recognised by UNESCO, used for centuries to channel water from the mountains.", emoji: "💧", color: "tc-4" },
+  { name: "Sabaot (Mt. Elgon)", lang: "Sabaot (Kalenjin)", group: "Nilotic", region: "Mount Elgon", pop: "~300K", desc: "Inhabiting the slopes of Mount Elgon on the Uganda border, the Sabaot are a Kalenjin sub-group known for their Sapana ceremony — a rite of passage where a bull is slaughtered to mark a man's transition to elder status.", emoji: "🌋", color: "tc-7" },
+  { name: "Endorois", lang: "Endorois (Kalenjin)", group: "Nilotic", region: "Lake Bogoria", pop: "~60K", desc: "The Endorois are a hunter-gatherer and pastoralist community whose ancestral home is Lake Bogoria. They won a landmark African Commission ruling in 2010 recognising their right to return to their ancestral lands — a historic ruling for indigenous rights.", emoji: "🦩", color: "tc-4" },
+  { name: "Ilwana (Malakote)", lang: "Ilwana", group: "Bantu", region: "Tana River", pop: "~30K", desc: "The Ilwana (also called Malakote) are a small Bantu community along the upper Tana River. They are primarily farmers and fishermen who have absorbed influences from surrounding Orma and Somali pastoralists.", emoji: "🌊", color: "tc-5" },
+  { name: "Sanye (Waata)", lang: "Waata", group: "Cushitic", region: "Lamu / Coast", pop: "~15K", desc: "The Sanye (Waata) are a hunter-gatherer people of the coastal hinterland. They were once the masters of elephant hunting and forest gathering along the Tana River. Today they are one of Kenya's most marginalised communities.", emoji: "🐘", color: "tc-7" },
+];
 
-		</div>
-	</div>
+const grid = document.getElementById('tribesGrid');
 
+function getColorIndex(idx) {
+  const colors = ['tc-0','tc-1','tc-2','tc-3','tc-4','tc-5','tc-6','tc-7'];
+  return colors[idx % colors.length];
+}
 
+function renderTribes(filter) {
+  grid.innerHTML = '';
+  tribes.forEach((t, i) => {
+    if (filter !== 'all' && t.group !== filter) return;
+    const card = document.createElement('div');
+    card.className = 'tribe-card';
+    card.onclick = () => openModal(t);
+    card.innerHTML = `
+      <div class="tribe-card-header ${t.color || getColorIndex(i)}">
+        <span class="tc-emoji">${t.emoji}</span>
+      </div>
+      <div class="tribe-card-body">
+        <div class="tribe-name">${t.name}</div>
+        <div class="tribe-lang">🗣 ${t.lang}</div>
+        <p class="tribe-desc">${t.desc.substring(0, 110)}...</p>
+        <span class="tribe-region">${t.group} · ${t.region}</span>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
 
-<!--3 column gallery-->
+function filterTribes(group, btn) {
+  document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderTribes(group);
+}
 
-<br>
-<div class="container-fluid padding">
-			<div class="row welcome text-center">
-				<div class="col-12">
+function openModal(t) {
+  document.getElementById('modalName').textContent = t.name;
+  document.getElementById('modalLang').textContent = `🗣 Language: ${t.lang}`;
+  document.getElementById('modalBody').innerHTML = `<p>${t.desc}</p>`;
+  document.getElementById('modalDetail').innerHTML = `
+    <div class="modal-detail-item"><div class="lbl">Ethnic Group</div><div class="val">${t.group}</div></div>
+    <div class="modal-detail-item"><div class="lbl">Region</div><div class="val">${t.region}</div></div>
+    <div class="modal-detail-item"><div class="lbl">Population (est.)</div><div class="val">${t.pop}</div></div>
+    <div class="modal-detail-item"><div class="lbl">Language Family</div><div class="val">${t.group} branch</div></div>
+  `;
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
 
-					<h1 class="dispaly-4">EXHIBITIONS</h1>
-					
-				</div>
-				<hr>
-			</div>
-			
-		</div>
-			<hr>
+function closeModalBtn() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
 
-<div class="container-fluid padding">
-			<div class="row padding">
-			<div class="col-sm-4 text-center">
-				<div class="card">
-					<img class="card-img-top" src="images/kisi.jpg">
-					<div class="card-body">
-						<h4 class="card-title"> KISII</h4>
-						<p>Also known as the Gusii, the Kisii ethnic 
-							grouplive in the Kisii highl.</p>
-						<a href="#" class="btn btn-outline-secondary">See profile</a>
-					</div>
-				</div>
-			</div>
+function closeModal(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModalBtn();
+}
 
-			<div class="col-sm-4 text-center">
-				<div class="card">
-					<img class="card-img-top" src="images/luo.jpg">
-					<div class="card-body">
-						<h4 class="card-title"> LUO</h4>
-						<p>The Luo community spreads 
-							wide in the east African community 
-							with a presence in Kenya, Tanzania,
- 							Ethiopia, Congo, Sudan, and Uganda.</p>
-						<a href="#" class="btn btn-outline-secondary">See profile</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-sm-4 text-center">
-				<div class="card">
-					<img class="card-img-top" src="images/turkana.jpg">
-					<div class="card-body">
-						<h4 class="card-title"> TURKANA</h4>
-						<p>The Turkana belong to the Nilotic 
-							community and are native in Turkana District 
-							found in northwestern Kenya. Read more:
-						</p>
-						<a href="#" class="btn btn-outline-secondary">See profile</a>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-<!--testimonials-->
-<hr class="my-4">
-	<div class="row padding">
-	<div class="col-md-6 text-center">
-				<div class="card">
-					<img class="card-img-top" src="images/borana.jpg" width="100%">
-					<div class="card-body">
-						<h4 class="card-title">Borana</h4>
-						<p>The beauty of the Kenyan cultural heritage unveals itself through the cultural outfits and events, ladies wearing the Borana cultural outfit..</p>
-						<a href="#" class="btn btn-outline-secondary">Read more</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-6 text-center">
-				<div class="card">
-					<img class="card-img-top" src="images/gikuyu.jpg" width="100%">
-					<div class="card-body">
-						<h4 class="card-title">The Kikuyu</h4>
-						<p>A couple wearing the Kikuyu traditional outfit, a very unique way of celebrating the kenyan heritage
-						</p>
-						<a href="#" class="btn btn-outline-secondary">Read more</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		</div>
-
-<!--About us two collum-->
-<hr class="my-4">
-
-	<div class="container-fluid padding">
-			<div class="row padding">
-				<div class=" col-lg-6">
-					<h2>ABOUT US</h2>
-					<p>Kikenya is a culture inspired website platform, as Kenya’s ethnic makeup continues to change in the wake of modernization, how many tribes in Kenya still hold fast to their culture and dialects in the wake of modernity?      
-				       <a href="about us.html"> READ MORE...</a></p>
-					<br>
-					
-				</div>
-				<div class="col-lg-6">
-					<img src="images/about.png" class="img-fluid">
-				</div>
-				
-			</div>
-			</div>
-
-<!-- footer-->
-<footer class="footer">
-		<div class="footer-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-3 col-md-6 footer-info">
-						<img src="images/logo.png" width="370" height="370" >
-						<p>.</p>
-					</div>
-
-					<div class="col-lg-3 col-md-6 footer-links">
-						<h4>Useful links</h4>
-
-						<ul>
-
-							<li><i class="ion-ios-arrow-right"><a href="#">HOME</a></i></li>
-
-							<li><i class="ion-ios-arrow-right"><a href="#">ABOUT US</a></i></li>
-
-							<li><i class="ion-ios-arrow-right"><a href="#">EXHIBITIONS</a></i></li>
-
-							<li><i class="ion-ios-arrow-right"><a href="#">GALLERY</a></i></li>									
-							<li><i class="ion-ios-arrow-right"><a href="#">CONTACTS</a></i></li>
-
-						</ul>
-					</div>	
-
-					<div class="col-lg-3 col-md-6 footer-contact">
-
-						<h4>follow us</h4>
-						<a href="#" ><i class="fab fa-twitter"></i></a>
-
-						<a href="#"><i class="fab fa-facebook"></i></a>
-
-						<a href="#"><i class="fab fa-instagram"></i></a>
-
-						<a href="#"><i class="fab fa-googlr-plus"></i></a>
-
-						<a href="#"><i class="fab fa-linkedin"></i></a>
-							
-					</div>
-
-
-					<div class="col-lg-3 col-md-6 footer-newsletter">
-
-						<h4>0ur Newsletter</h4>
-						<p>Subscribe to our news lettre to get news on more and trending cultural designs.
-					</p>
-
-					<form action="" method="post">
-						<input type="email" name="email">
-						<input type="submit" value="subscribe">
-					</form>
-
-					</div>
-				</div>
-			</div>
-			
-		</div>
-		<p class="copyright text-auted">Copyright &copy; kikenya 2019</p>
-	</footer>
-
-						
-	</div>	
+renderTribes('all');
+</script>
 </body>
 </html>
-
-<!---				<div class="col-md-4">
-						<hr class="light">
-						<h5>contact us</h5>
-						<hr class="light">
-						<p>call:+2547 23 012 054 <br> +2547 02 336 320</p>
-						<p>Tel:230-120-540 <br> 023-363-200</p>
-						
-						<div class="col">
-							<h4>connect</h4>
-							<a href="#" class="fa fa-facebook"></a>
-
-							<a href="#" class="fa fa-linkedin"></a>
-
-							<a href="#" class="fa fa-youtube"></a>
-
-							<a href="#" class="fa fa-twitter"></a>
-
-							<a href="#" class="fa fa-google"></a>
-						</div>
-					</div>
-
-	---->
