@@ -42,9 +42,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const projects = [
     { name: 'Calculator', type: 'app', folder: 'calculator', img: 'assets/images/portfolio-03.jpg' },
     { name: 'Clock', type: 'app', folder: 'clock', img: 'assets/images/portfolio-06.jpg' },
-    { name: 'Dashboard', type: 'web', folder: 'dash board', img: 'assets/images/portfolio-05.jpg' },
+    { name: 'Dashboard', type: 'web', folder: 'dash board', img: 'assets/images/portfolio-05.png' },
     { name: 'KiKenya', type: 'web', folder: 'kikenya', img: 'assets/images/portfolio-02.jpg' },
-    { name: 'Vintage Master', type: 'design', folder: 'Vintage-master', img: 'assets/images/portfolio-01.jpg' },
+    { name: 'Vintage Master', type: 'design', folder: 'Vintage-master', img: 'assets/images/portfolio-01.png' },
     { name: 'Bootstrap Template', type: 'web', folder: 'bootstrap templete', img: 'assets/images/portfolio-03.jpg' }
 ];
 
@@ -89,9 +89,9 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 
 // recent work (external sites)
 const recent = [
-    { name: 'Judith Blessings Salon', url: 'https://judithblessingssalon.co.ke', img: 'https://placehold.co/600x400?text=Judith+Salon' },
-    { name: 'Maureen Hair Salon', url: 'https://maureenhairsalon.co.ke', img: 'https://placehold.co/600x400?text=Maureen+Salon' },
-    { name: 'Andologi Deo Youth', url: 'https://andologideonyouth.org', img: 'https://placehold.co/600x400?text=Andologi+Youth' }
+    { name: 'Judith Blessings Salon', url: 'https://judithblessingssalon.co.ke', img: 'assets/images/logo.jpg'},
+    { name: 'Maureen Hair Salon', url: 'https://maureenhairsalon.co.ke', img: 'assets/images/Stitch-Braids.jpg'},
+    { name: 'Andologi Deo Youth', url: 'https://andologideonyouth.org', img: 'assets/images/we.jpg'}
 ];
 const recentContainer = document.getElementById('recent-projects-container');
 if (recentContainer) {
