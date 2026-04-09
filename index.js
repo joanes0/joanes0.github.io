@@ -1,33 +1,4 @@
-<<<<<<< HEAD
-//get the form by its id
-const form = document.getElementById("contact-form"); 
-
-//1.
-const formEvent = form.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  //2.
-  let mail = new FormData(form);
-
-  //3.
-  sendMail(mail);
-});
-
-
-
-
-const sendMail = (mail) => {
-    //1.
-    fetch("https://nodemailer-vic-lo.herokuapp.com/send", {
-      method: "post", //2.
-      body: mail, //3.
-  
-    }).then((response) => {
-      return response.json();
-    });
-  };
-=======
-// custom cursor (same as before – keep it)
+// custom cursor
 const cursorDot = document.querySelector('.cursor-dot');
 const cursorOutline = document.querySelector('.cursor-outline');
 if (cursorDot && cursorOutline) {
@@ -41,7 +12,7 @@ if (cursorDot && cursorOutline) {
     });
 }
 
-// theme
+// theme toggle
 const themeSwitch = document.getElementById('theme-switch');
 if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');
 themeSwitch.addEventListener('click', () => {
@@ -67,7 +38,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ---------- PROJECTS (updated images, removed alrounder) ----------
+// ---------- PROJECTS (with custom images, no alrounder) ----------
 const projects = [
     { name: 'Calculator', type: 'app', folder: 'calculator', img: 'assets/images/portfolio-03.jpg' },
     { name: 'Clock', type: 'app', folder: 'clock', img: 'assets/images/portfolio-06.jpg' },
@@ -81,14 +52,14 @@ function getProjectUrl(folder) {
     return `works done/${encodeURIComponent(folder)}/index.html`;
 }
 
-const container = document.getElementById('projects-container');
+const projectsContainer = document.getElementById('projects-container');
 function renderProjects(filter = 'all') {
     const filtered = filter === 'all' ? projects : projects.filter(p => p.type === filter);
     if (filtered.length === 0) {
-        container.innerHTML = '<p style="text-align:center;">No projects in this category.</p>';
+        projectsContainer.innerHTML = '<p style="text-align:center;">No projects in this category.</p>';
         return;
     }
-    container.innerHTML = filtered.map(p => `
+    projectsContainer.innerHTML = filtered.map(p => `
         <div class="project-card">
             <div class="project-img">
                 <img src="${p.img}" alt="${p.name}" onerror="this.onerror=null; this.parentElement.style.background='linear-gradient(135deg, #dc2626, #2e7d32)'; this.parentElement.innerHTML='<i class=\\'fas fa-cube\\' style=\\'font-size:3rem; color:white;\\'></i>'">
@@ -116,7 +87,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     });
 });
 
-// recent work (unchanged)
+// recent work (external sites)
 const recent = [
     { name: 'Judith Blessings Salon', url: 'https://judithblessingssalon.co.ke', img: 'https://placehold.co/600x400?text=Judith+Salon' },
     { name: 'Maureen Hair Salon', url: 'https://maureenhairsalon.co.ke', img: 'https://placehold.co/600x400?text=Maureen+Salon' },
@@ -137,7 +108,7 @@ if (recentContainer) {
     `).join('');
 }
 
-// animated counters (same)
+// animated counters
 let counted = false;
 const aboutSection = document.querySelector('.about');
 const counters = [
@@ -179,4 +150,3 @@ document.getElementById('contactForm')?.addEventListener('submit', (e) => {
 
 // external links security
 document.querySelectorAll('a[target="_blank"]').forEach(l => l.setAttribute('rel', 'noopener noreferrer'));
->>>>>>> fcdb3c5 (Website update)
